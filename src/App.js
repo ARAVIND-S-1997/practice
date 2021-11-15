@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <LikeCounter/>
     </div>
   );
 }
 
-export default App;
+
+function LikeCounter(){
+  const[Like,setLike]=useState(0);
+  console.log(Like)
+  return(
+    <div>
+<button type="button" onClick={()=> {  setLike(Like+1)}}>Like</button>
+<p>{Like}</p>
+
+    </div>
+  )
+}
